@@ -8,8 +8,21 @@
     */
 
     //Entrada
+    const litrosCombustivel = Number(prompt("Quantos litros de combustível?"))
+    const precoLitro = Number(prompt("Preço do litro do combustível?"))
+    const precoTransporte = Number(prompt("Preço do transporte público?"))
 
     //Processamento
+    const custoCarro = litrosCombustivel * precoLitro
+    if (precoTransporte > custoCarro) {
+        document.write(`Vá de carro pois é mais barato: R$ ${custoCarro.toFixed(2)}`)
+    }
+    else if (precoTransporte < custoCarro) {
+        document.write(`Vá de ônibus pois é mais barato: R$ ${precoTransporte.toFixed(2)}`)
+    }
+    else {
+        document.write(`Ir de ônibus ou carro custa a mesma coisa: R$ ${custoCarro.toFixed(2)}`)
+    }
 
     //Saída
     
