@@ -12,10 +12,25 @@
     */
 
     //Entrada
-
+    const contaAgua = Number(prompt("Digite o valor da conta de água:"))
+    const contaEnergia = Number(prompt("Digite o valor da conta de energia elétrica:"))
+    const contaTelefone = Number(prompt("Digite o valor da conta de telefone:"))
+    const contaSupermercado = Number(prompt("Digite o valor da conta de supermercado:"))
+    const salarioMensal = Number(prompt("Digite o valor do salário mensal:"))
 
     //Processamento
+    const totalGastoMes = contaAgua + contaEnergia + contaTelefone + contaSupermercado
+    let diferenca
 
+    if (totalGastoMes > salarioMensal){
+        diferenca = totalGastoMes - salarioMensal
+        document.write(`Houve um prejuízo de R$ ${diferenca.toFixed(2)}`)
+    }else if (salarioMensal > totalGastoMes){
+        diferenca = salarioMensal - totalGastoMes
+        document.write(`Houve um lucro de R$ ${diferenca.toFixed(2)}`)
+    }else{
+        document.write("Não houve lucro e nem prejuízo!")
+    }
 
     //Saída
 

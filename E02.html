@@ -10,12 +10,24 @@
     */
 
     //Entrada
+    const horasTrabalhadas = Number(prompt("Quantidade de horas trabalhadas:"))
+    const salarioHora = Number(prompt("Valor recebido por hora trabalhada:"))
 
-
+    let adicionalHora = 0
     //Processamento
-
+    if (horasTrabalhadas <= 45) {
+        document.write("Não haverá adicional!")    
+    }
+    else if (horasTrabalhadas <= 60) {
+        adicionalHora = 20
+    }
+    else {
+        adicionalHora = 30
+    }
+    const salarioNormal = horasTrabalhadas * salarioHora
+    const salarioFinal = salarioNormal + (salarioNormal * adicionalHora / 100)
+    const horaTrabalhadaFinal = salarioFinal / horasTrabalhadas
 
     //Saída
-
-    
+    document.write(`O salário final será de R$ ${salarioFinal.toFixed(2)}. O número de horas trabalhadas é de ${horasTrabalhadas} e o valor recebido por hora é de R$ ${horaTrabalhadaFinal.toFixed(2)}`)
 </script>
